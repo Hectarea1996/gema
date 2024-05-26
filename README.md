@@ -1,6 +1,6 @@
 
 
-<a id="header-adp-github-headertag613"></a>
+<a id="header-adp-github-headertag665"></a>
 # GEneric MAcros
 
 Welcome to GEMA\!
@@ -12,7 +12,7 @@ A generic macro in GEMA is just a bunch of regular macros that one of them will 
 Currently\, no collision check is made\. I\.e\, the same macro can be duplicated in the bunch of regular macros belonging to one of the generic macros\.
 
 
-<a id="header-adp-github-headertag614"></a>
+<a id="header-adp-github-headertag666"></a>
 ## Getting Started
 
 The macro [gema\:define\-generic\-macro](/docs/scribble/reference.md#function-gema-define-generic-macro) is the macro that allows you to define a generic macro\. It has the same syntax as ``` defmacro ```\.
@@ -89,13 +89,14 @@ Let\'s try to use the first version again\:
 `````
 
 
-<a id="header-adp-github-headertag625"></a>
+<a id="header-adp-github-headertag677"></a>
 ## Documentation
 
-(#<adpgh:item {1002AA84A3}>)
+* [API reference](/docs/scribble/reference.md#header-adp-github-api-reference)
 
 
-<a id="header-adp-github-headertag626"></a>
+
+<a id="header-adp-github-headertag678"></a>
 ## All CL generic macros
 
 GEMA also exports every macro from the package ``` common-lisp ``` as a generic macro\.

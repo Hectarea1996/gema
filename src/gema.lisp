@@ -24,6 +24,8 @@
       (error "No suitable specialization for the macro ~s." generic-name))))
 
 (cl:defmacro define-generic-macro (name macro-lambda-list &body body)
+  "Defines a new generic macro. If the generic macro already exists, then a new specialization is added.
+When using the generic macro, the last specialization defined that does not fail at macroexpansion is used."
   `(progn
      ,@(cl:when (not (get name 'specializations))
         (let ((args (gensym "ARGS")))

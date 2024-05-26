@@ -65,8 +65,8 @@ Let's try to use the first version again:
 
 @subheader[]{Documentation}
 
-@list[
-@item{@href[api-reference]}
+@itemize[
+@item{@href[:tag api-reference]{API reference}}
 ]
 
 
