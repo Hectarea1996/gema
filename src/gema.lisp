@@ -28,14 +28,18 @@
 When using the generic macro, the last specialization defined that does not fail at macroexpansion is used."
   `(progn
      ,@(cl:when (not (get name 'specializations))
-        (let ((args (gensym "ARGS")))
-          `((cl:defmacro ,name (&rest ,args)
-              (expand-generic-macro ',name ,args)))))
-     ,@(let ((specialization (gensym (symbol-name name))))
+         (let ((args (gensym "ARGS")))
+           `((cl:defmacro ,name (&rest ,args)
+               (expand-generic-macro ',name ,args)))))
+     ,@(let ((specialization (gentemp (symbol-name name))))
+         (print specialization)
+         (print (get name 'specializations))
+         (print (member specialization (get name 'specializations)))
          `((cl:defmacro ,specialization ,macro-lambda-list
              ,@body)
            (eval-when (:compile-toplevel :load-toplevel :execute)
-             (add-macro-specialization ',name ',specialization))))
+             (cl:when (not (member ',specialization (get ',name 'specializations)))
+               (add-macro-specialization ',name ',specialization)))))
      (values ',name)))
 
 (cl:defmacro define-cl-generic-macros ()
