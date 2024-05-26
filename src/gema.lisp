@@ -32,9 +32,6 @@ When using the generic macro, the last specialization defined that does not fail
            `((cl:defmacro ,name (&rest ,args)
                (expand-generic-macro ',name ,args)))))
      ,@(let ((specialization (gentemp (symbol-name name))))
-         (print specialization)
-         (print (get name 'specializations))
-         (print (member specialization (get name 'specializations)))
          `((cl:defmacro ,specialization ,macro-lambda-list
              ,@body)
            (eval-when (:compile-toplevel :load-toplevel :execute)
