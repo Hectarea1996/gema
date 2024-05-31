@@ -14,6 +14,25 @@ A generic macro in GEMA is just a bunch of regular macros that one of them will 
 Currently, no collision check is made. I.e, the same macro can be duplicated in the bunch of regular macros belonging to one of the generic macros.
 
 
+@subheader{Installation}
+
+@itemize[
+@item{Manual:}
+]
+@code-block[:lang "sh"]{
+cd ~/common-lisp
+git clone https://github.com/Hectarea1996/gema.git
+}
+@itemize[
+@item{Quicklisp (Ultralisp):}
+]
+@code-block[:lang "common-lisp"]{
+(ql-dist:install-dist "http://dist.ultralisp.org/" :prompt nil)
+(ql:quickload "gema")
+}
+
+
+
 @subheader[]{Getting Started}
 
 The macro @fref[gema:define-generic-macro] is the macro that allows you to define a generic macro. It has the same syntax as @code{defmacro}.
